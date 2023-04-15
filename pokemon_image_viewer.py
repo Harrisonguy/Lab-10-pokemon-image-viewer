@@ -49,7 +49,12 @@ cbox_poke_name.set("Select a Pokemon")
 cbox_poke_name.grid(padx=10, pady=(10,0))
 
 def handle_pokemon_select(event):
-   
+    """changes display image into selected pokemon on GUI
+
+    Args:
+        event (<<ComboboxSelected>>): when the user selects from the drop down menu.
+    """
+      
     sel_pokemon = cbox_poke_name.get()
     if sel_pokemon is None:
         return
@@ -62,6 +67,8 @@ def handle_pokemon_select(event):
 cbox_poke_name.bind('<<ComboboxSelected>>', handle_pokemon_select)
 
 def handle_set_desktop():
+    """Sets desktop background.
+    """
     image_lib.set_desktop_background_image(image_path)
 
 
@@ -69,5 +76,5 @@ def handle_set_desktop():
 btn_set_desktop = ttk.Button(frame, text='Set as desktop image', command=handle_set_desktop)
 btn_set_desktop.grid(padx=10, pady=(10, 20))
 btn_set_desktop.config(state='disabled')
-# TODO: Put code here
+
 root.mainloop()
